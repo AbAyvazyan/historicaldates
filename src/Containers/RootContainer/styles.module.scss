@@ -1,0 +1,155 @@
+@import '../../variables';
+
+.rootSection {
+  height: 100vh;
+  margin: 0 160px 0 320px;
+  border-left: 1px solid rgba($primary-color, 0.1);
+  border-right: 1px solid rgba($primary-color, 0.1);
+  position: relative;
+
+  .absoluteTitle {
+    position: absolute;
+    left: -5px;
+    top: 170px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 70px;
+
+    & > h1 {
+      width: 350px;
+      font-family: PT Sans, serif;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 67.2px;
+      text-align: left;
+      color: $primary-color;
+      word-break: break-all;
+      white-space: pre-line;
+    }
+  }
+
+  .vector {
+    height: 120px;
+    border: 5px solid;
+    border-image-source: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%);
+    border-image-slice: 1;
+  }
+
+  .horizontalLine {
+    position: absolute;
+    border: 1px solid rgba($primary-color, 0.1);
+    width: 100%;
+    //height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .verticalLine {
+    position: absolute;
+    border: 1px solid rgba($primary-color, 0.1);
+    height: 100%;
+    left: 50%;
+    transform: translateY(0, -50%);
+
+  }
+
+  .controllerPart {
+    position: relative;
+    top: 70%;
+    left: 5%;
+
+    p {
+      font-family: PT Sans, serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18.12px;
+      text-align: left;
+      color: $primary-color;
+    }
+
+    .controllerButtonHolder {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .controllerButton {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #42567A80;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1600px) {
+  .rootSection {
+    margin: 0 50px 0 200px;
+  }
+}
+
+
+@media only screen and (max-width: 1350px) {
+  .rootSection {
+    margin: 0 20px 0 70px;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .rootSection {
+    margin: 0;
+  }
+}
+
+
+@media only screen and (max-width: 950px) {
+  .rootSection {
+    margin: 0;
+    border: none;
+
+    .absoluteTitle {
+      gap: 0;
+      top: 5%;
+      left: 10%;
+
+      & > h1 {
+        font-size: 20px;
+        width: 130px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+
+      }
+
+      .vector {
+        display: none;
+      }
+    }
+  }
+  .horizontalLine {
+    width: 90% !important;
+    left: 50%;
+    top: 30% !important;
+    transform: translate(-50%, 0) !important;
+  }
+  .verticalLine {
+    display: none;
+  }
+
+  .controllerPart {
+    z-index: 11;
+    .controllerButtonHolder {
+      gap: 10px!important;
+      .controllerButton {
+        width: 25px!important;
+        height: 25px!important;
+      }
+    }
+  }
+}
